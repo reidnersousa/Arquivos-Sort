@@ -1,61 +1,82 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 #include "BuscaOrdenadacao.h"
 #include "BubbleSort.h"
+
+/**
+**
+***            @autor                   Reidner sousa
+****           @Version                 1
+*****          @DataUltimaModificacao   30/12/2021 12:11
+****           @NomeCodigo              BubbleSort
+*****          @TipoCodigo              Algoritmo de ordenação
+***            @CoisasParaFazer         explicar como funcionar o algoritmo de bubble e  grava o video
+**/
+
+// int *V recebe um vetor
+// int N e o tamanho do vetor
+
+void imprimir(int  V[10] , int nn){
+    int o;
+    printf("Numeros antes da iteracao\n");
+    for(o=0;o<nn; o++){
+        printf("%d,",V[o]);
+    }
+    printf("\n");
+}
+
+void bubbleSort(int *V, int N){
+    int i, continua, aux, fim =N;
+    int ajudaai , ajudaaimais1;
+    do{
+        continua=0;
+        for(i=0; i<fim-1; i++){
+            ajudaai=V[i];
+            ajudaaimais1=V[i+1];
+            printf("\nvalor de ajudaai %d\n",ajudaai);
+            printf("valor de ajudaaimais1 %d\n",ajudaaimais1);
+            printf("iteracao %d\n",i);
+            imprimir(V,N);
+            if(V[i]>V[i+1]){
+                aux=V[i];
+                V[i]=V[i+1];
+                V[i+1]=aux;
+                continua=i;
+                printf("continua %d\n",continua);
+            }
+        }
+        fim--;
+    }
+    while(continua != 0);
+    printf("\n continua %d",continua);
+}
+
+
 int main()
 {
-    int Vv[7]={23,4,67,-8,54,90,21};
 
-
-    int vet[10]={-8,-5,1,4,14,21,23,54,67,90};
-
-    struct aluno V[3]={{2,"EEE",9.5,7.8,8.5},
-                        {4,"Ricardo",7.5,8.7,6.8},
-                        {3,"ANA",5.7,6.1,7.5}};
-    if(buscaLinearNome(V,3,"EEE")!=1){
-        printf("RTH ok \n");
-    }
-    else{
-        printf("ERRRo\n");
-    }
-
-    if(buscaBinaria(vet,10,14)!=1){
-        printf("OK\n");
-    }
-    else{
-        printf("ERRo\n");
-    }
-
-    int lop[10]={23,4,67,-8,90,54,21};
-    if(bubbleSort1(lop,10)){
-        printf("OKOKOK");
-    }
-    else{
-        printf("ERRER3");
-    }
     int i;
-    struct alunoVetor V1[3]={{2,"EEE",9.5,7.8,8.5},
-                        {4,"Ricardo",7.5,8.7,6.8},
-                        {3,"ANA",5.7,6.1,7.5}};
-    insertionStorNome(V1,3);
-    for(i=0;i<3;i++){
-        printf("%d) %s\n",V1[i].matricula,V1[i].nome);
+    int lop[10]={23,4,67,-8,21};
+    for(i=0; i<5; i++){
+        printf("%d\n",lop[i]);
+
     }
+    printf("Ordenação \n");
 
-    int pl;
+    bubbleSort(lop,5);
 
-    //qsort(lop,10,sizeof(int),comparaCrescente);
-   // qsort(V1,3,sizeof(struct alunoVetor),comparaNome);
-    for(pl=0;pl<4;pl++){
-        printf("%d) %s\n",V1[pl].matricula,V1[pl].nome);
-    }
+    printf("Teste\n");
+    //imprimir(lop,5);
 
-    for(pl=0;pl<10;pl++){
-        printf("Number = %d\n",lop[pl]);
-    }
 
-    printf("Fim da exeucao");
-    return 0;
+
+
+
+
+
+
+
 }// fim da main
 
 

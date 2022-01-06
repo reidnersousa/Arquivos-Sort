@@ -5,7 +5,33 @@
 
 #define ww 100
 
+int euclide(int a, int b)
+{
+    int c;
+    c=a%b;
+    if(c==0){
+       // printf("retorno de b= %d\n",b);
+        return b;
+    }
+    else{
+         //printf("retorno de a= %d , b=%d\n",a,b);
+        return euclide(b,c);
+    }
+ }
 
+int euclidedouble(long a, long  b)
+{
+    int c;
+    c=a%b;
+    if(c==0){
+       // printf("retorno de b= %d\n",b);
+        return b;
+    }
+    else{
+         //printf("retorno de a= %d , b=%d\n",a,b);
+        return euclide(b,c);
+    }
+ }
 
 
 
@@ -183,17 +209,17 @@ void insertionStorNome(struct alunoVetor *vs,int ns)
 
 
 
-
-void bubbleSort1(int *V, int N)
-{
+// int *V recebe um vetor
+// int N e o tamanho do vetor
+void bubbleSort1(int *V, int N){
     int i, continua, aux, fim =N;
-    do
-    {
+    int ajudaai , ajudaaimais1;
+    do{
         continua=0;
-        for(i=0; i<fim-1; i++)
-        {
-            if(V[i]>V[i+1])
-            {
+        for(i=0; i<fim-1; i++){
+            ajudaai=V[i];
+            ajudaaimais1=V[i+1];
+            if(V[i]>V[i+1]){
                 aux=V[i];
                 V[i]=V[i+1];
                 V[i+1]=aux;
@@ -204,6 +230,8 @@ void bubbleSort1(int *V, int N)
     }
     while(continua != 0);
 }
+
+
 // tbm tem na aula 54 ordenção de vetor de Struct
 void insertionStor(int *vv, int nn)
 {
