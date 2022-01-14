@@ -7,8 +7,8 @@
 /**
 **
 ***            @autor                   Reidner sousa
-****           @Version                 1
-*****          @DataUltimaModificacao   30/12/2021 12:11
+****           @Version                 2
+*****          @DataUltimaModificacao   14/01/2022 19:10
 ****           @NomeCodigo              BubbleSort
 *****          @TipoCodigo              Algoritmo de ordenação
 ***            @CoisasParaFazer         explicar como funcionar o algoritmo de bubble e  grava o video
@@ -53,6 +53,41 @@ void bubbleSort(int *V, int N){
 }
 
 
+void bolha(int n, int*v)
+{
+    int ajudaai;
+    int ajudaaimais1;
+    for(int i=n-1; i>=1; i--){
+        for(int j=0; j<i;++j){
+
+            ajudaai=v[i];
+            ajudaaimais1=v[i+1];
+            printf("\nvalor de ajudaai %d\n",ajudaai);
+            printf("valor de ajudaaimais1 %d\n",ajudaaimais1);
+            printf("i =%d , j =%d \n",i,j);
+            if(v[j]>v[j+1]){
+                int temp = v[j];
+                v[j]=v[j+1];
+                v[j+1]=temp;
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int main()
 {
 
@@ -64,11 +99,21 @@ int main()
     }
     printf("Ordenação \n");
 
-    bubbleSort(lop,5);
+   // bubbleSort(lop,5);
 
-    printf("Teste\n");
-    //imprimir(lop,5);
 
+    int v[8]={25,86,48,92,57,12,33,37};
+    printf("Outro vetor antes de ordena  \n");
+    for(i=0; i<8; i++){
+        printf("%d\n",v[i]);
+
+    }
+    bolha(8,v);
+    printf("Outro vetor \n");
+    for(i=0; i<8; i++){
+        printf("%d\n",v[i]);
+
+    }
 
 
 
