@@ -15,4 +15,12 @@ struct balde{
     int valores[TAM];
 };
 
+typedef struct estudante Estudante;
+struct estudante{
+    char nome[81];
+    char mat[8];
+    char turma;
+    char email[41];
+};
+
 #endif // BUBBLESORT_H_INCLUDED

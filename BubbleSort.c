@@ -5,6 +5,108 @@
 
 #define ww 100
 
+/******************************
+*                       @TesteEstudanteComeco
+*
+*
+****************/
+
+
+
+/************************************************************88
+*                       @TesteEstudanteFim
+*
+*
+*/
+void imprimir(int  V[10] , int nn){
+    int o;
+    printf("Numeros antes/depois da iteracao\n");
+    for(o=0;o<nn; o++){
+        printf("%d,",V[o]);
+    }
+    printf("\n");
+}
+
+
+
+
+void bubbleSort(int *V, int N){
+    int i, continua, aux, fim =N;
+
+    do{
+        continua=0;
+        for(i=0; i<fim-1; i++){
+            if(V[i]>V[i+1]){
+                aux=V[i];
+                V[i]=V[i+1];
+                V[i+1]=aux;
+                continua=i;
+
+            }
+        }
+        fim--;
+    }
+    while(continua != 0);
+
+}
+
+void bubbleSort_DeBug(int *V, int N){
+    int i, continua, aux, fim =N;
+    int ajudaai , ajudaaimais1;
+    do{
+        continua=0;
+        for(i=0; i<fim-1; i++){
+            ajudaai=V[i];
+            ajudaaimais1=V[i+1];
+            printf("\nvalor de ajudaai %d\n",ajudaai);
+            printf("valor de ajudaaimais1 %d\n",ajudaaimais1);
+            printf("iteracao %d\n",i);
+            imprimir(V,N);
+            if(V[i]>V[i+1]){
+                aux=V[i];
+                V[i]=V[i+1];
+                V[i+1]=aux;
+                continua=i;
+                printf("continua %d\n",continua);
+            }
+        }
+        fim--;
+    }
+    while(continua != 0);
+    printf("\n continua %d",continua);
+}
+
+
+
+
+
+void bolha(int n, int*v)
+{
+
+    for(int i=n-1; i>=1; i--){
+        for(int j=0; j<i;++j){
+
+            if(v[j]>v[j+1]){
+                int temp = v[j];
+                v[j]=v[j+1];
+                v[j+1]=temp;
+            }
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 int euclide(int a, int b)
 {
     int c;
